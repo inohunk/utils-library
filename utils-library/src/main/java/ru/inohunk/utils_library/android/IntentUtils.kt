@@ -9,11 +9,11 @@ import androidx.annotation.RequiresApi
 
 const val PACKAGE = "package"
 
-fun openAppSettings(context: Context) {
+fun Context.openAppSettings() {
     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-    val uri: Uri = Uri.fromParts(PACKAGE, context.packageName, null)
+    val uri: Uri = Uri.fromParts(PACKAGE, this.packageName, null)
     intent.data = uri
-    context.startActivity(intent)
+    this.startActivity(intent)
 }
 
 @RequiresApi(Build.VERSION_CODES.O)
