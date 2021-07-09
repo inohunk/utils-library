@@ -14,7 +14,7 @@
   //MainActivity.kt
   
   override fun onCreate(savedInstanceState: Bundle?) {
-      if(isBleSupported) {
+      if(isBleSupported()) {
           //do anything
       } else {
           //do anything
@@ -49,7 +49,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     val gpsPermissionGranted = false
     val gpsPermissionAllowToRequest = false
     
-    if(gpsPermissionGranted,not() & gpsPermissionAllowToRequest.not()){
+    if(gpsPermissionGranted.not() & gpsPermissionAllowToRequest.not()){
         //Show a pop-up with a warning that you can't request the necessary permissions
       	//And then open app settings
         openAppSettings()
@@ -67,7 +67,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     val gpsPermissionGranted = false
     val gpsPermissionAllowToRequest = false
     
-    if(gpsPermissionGranted,not() & gpsPermissionAllowToRequest.not()){
+    if(gpsPermissionGranted.not() & gpsPermissionAllowToRequest.not()){
         //Show a pop-up with a warning that you can't request the necessary permissions
       	//And then open app settings
         openAppNotificationsSettings()
